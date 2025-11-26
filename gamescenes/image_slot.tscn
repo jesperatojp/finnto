@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://drdqb4fmgsgsm"]
+
+[ext_resource type="Texture2D" uid="uid://5mmk8ent56q8" path="res://resources/art/beste/NetaYume_Lumina_3.5_00074_.png" id="1_13yaa"]
+[ext_resource type="Script" uid="uid://dg1i8r2a7677r" path="res://gamescenes/image_slot.gd" id="1_a3t4f"]
+[ext_resource type="Texture2D" uid="uid://8jquj0euojea" path="res://resources/art/ui/icons/arrow_up.png" id="2_a3t4f"]
+[ext_resource type="Texture2D" uid="uid://12112216mj2e" path="res://resources/art/ui/icons/arrow_down.png" id="3_m7hob"]
+[ext_resource type="Texture2D" uid="uid://cii4hbc2ebtb1" path="res://resources/art/ui/icons/red_x.png" id="4_m7hob"]
+
+[node name="image_slot" type="Control"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 13
+script = ExtResource("1_a3t4f")
+
+[node name="back_panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(68, 0)
+layout_mode = 0
+offset_left = -4.0
+offset_right = 132.0
+offset_bottom = 68.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="list_number_l" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+text = "99."
+
+[node name="display_image_box" type="TextureRect" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_13yaa")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="buttons" type="VBoxContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Control2" type="Control" parent="HBoxContainer/buttons"]
+layout_mode = 2
+
+[node name="up_b" type="TextureButton" parent="HBoxContainer/buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "move up"
+texture_normal = ExtResource("2_a3t4f")
+
+[node name="remove_b" type="TextureButton" parent="HBoxContainer/buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 20)
+layout_mode = 2
+tooltip_text = "Delete image"
+texture_normal = ExtResource("4_m7hob")
+ignore_texture_size = true
+stretch_mode = 3
+
+[node name="down_b" type="TextureButton" parent="HBoxContainer/buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "move down"
+texture_normal = ExtResource("3_m7hob")
+
+[node name="Control" type="Control" parent="HBoxContainer/buttons"]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="HBoxContainer/display_image_box" to="." method="_on_display_image_box_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/buttons/up_b" to="." method="_on_up_b_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/buttons/remove_b" to="." method="_on_remove_b_mouse_entered"]
+[connection signal="pressed" from="HBoxContainer/buttons/remove_b" to="." method="_on_remove_b_pressed"]
+[connection signal="pressed" from="HBoxContainer/buttons/down_b" to="." method="_on_down_b_pressed"]

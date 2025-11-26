@@ -1,0 +1,1152 @@
+[gd_scene load_steps=34 format=3 uid="uid://i1kkhc05eujw"]
+
+[ext_resource type="Script" uid="uid://brc638qj31yfn" path="res://gamescenes/game.gd" id="1_1abrn"]
+[ext_resource type="Script" uid="uid://bws4y0yiyyfu6" path="res://gamescenes/ui.gd" id="3_6pddf"]
+[ext_resource type="Theme" uid="uid://b3klx57slj0l3" path="res://resources/themes/soft_retro/soft_retro.tres" id="3_lgeyu"]
+[ext_resource type="Script" uid="uid://bw62c4ovasnn7" path="res://gamescenes/new_game_dialog.gd" id="3_p6iyq"]
+[ext_resource type="Script" uid="uid://cb8ikscvgd2l8" path="res://gamescenes/player_info_monologs.gd" id="3_sot6t"]
+[ext_resource type="Texture2D" uid="uid://c78hsv47y6bu0" path="res://resources/art/ui/icons/varsel trekant.png" id="5_lgeyu"]
+[ext_resource type="Script" uid="uid://dvju4r15ta1kx" path="res://gamescenes/popup_msg_monolog.gd" id="7_etnnn"]
+[ext_resource type="Script" uid="uid://dd8jdqh60r7nt" path="res://gamescenes/winner_splashscreen.gd" id="8_7x1be"]
+[ext_resource type="AudioStream" uid="uid://gflqk0xwke6t" path="res://resources/sound/music/Sketchbook 2024-07-04.ogg" id="9_1bldx"]
+[ext_resource type="Script" uid="uid://c4xearlptju1q" path="res://gamescenes/deck_maker.gd" id="9_45ppd"]
+[ext_resource type="AudioStream" uid="uid://p41w5tmgymgq" path="res://resources/sound/music/Sketchbook 2024-07-19_L02.ogg" id="10_2w2vq"]
+[ext_resource type="AudioStream" uid="uid://bofmrukph50pv" path="res://resources/sound/music/Sketchbook 2024-07-19_L01.ogg" id="11_eg5ho"]
+[ext_resource type="AudioStream" uid="uid://cejerlfcp1f5m" path="res://resources/sound/music/Sketchbook 2024-10-26.ogg" id="12_56yfq"]
+[ext_resource type="AudioStream" uid="uid://bn2rkajcc6qyf" path="res://resources/sound/music/Sketchbook 2024-10-23.ogg" id="13_5rv5f"]
+[ext_resource type="AudioStream" uid="uid://bqsvufoidsjrg" path="res://resources/sound/sfx/sucess/Retro Event Acute 08.wav" id="14_eg5ho"]
+[ext_resource type="AudioStream" uid="uid://dcbkfj8nngikh" path="res://resources/sound/sfx/sucess/Retro Event Acute 11.wav" id="15_56yfq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_1bldx"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_2w2vq"]
+offsets = PackedFloat32Array(0, 0.15801354, 0.1738149, 0.48081264, 0.8171558, 0.979684)
+colors = PackedColorArray(0.9490196, 0, 0, 0.67058825, 0.8509804, 0.43137255, 0.2784314, 0.67058825, 0.84251267, 0.47361898, 0.3044268, 1, 0.8862745, 0.72156864, 0.10980392, 0.5411765, 1, 1, 1, 0.5529412, 1, 1, 0.6666667, 0.62352943)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eg5ho"]
+gradient = SubResource("Gradient_2w2vq")
+width = 1
+fill_to = Vector2(0.82051283, 0.9017094)
+
+[sub_resource type="Curve" id="Curve_56yfq"]
+_data = [Vector2(0.09546539, 0.0748837), 0.0, 0.0, 0, 0, Vector2(0.45584726, 0.6432558), 2.1715603, 2.1715603, 0, 0, Vector2(0.7207637, 0.8851162), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5rv5f"]
+curve = SubResource("Curve_56yfq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_45ppd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(120, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 7.731
+initial_velocity_min = 167.45999
+initial_velocity_max = 167.45999
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_5rv5f")
+sub_emitter_mode = 2
+sub_emitter_amount_at_end = 32
+
+[sub_resource type="Gradient" id="Gradient_eg5ho"]
+offsets = PackedFloat32Array(0, 0.16478555, 0.44243792, 0.6207675, 1)
+colors = PackedColorArray(0.72156864, 0, 0, 1, 0.69927734, 0.40784606, 0.14599591, 1, 0.7933567, 0.65760666, 0.17815438, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_56yfq"]
+gradient = SubResource("Gradient_eg5ho")
+width = 1
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Curve" id="Curve_5rv5f"]
+_data = [Vector2(0.023866348, 0.02651155), 0.0, 0.0, 0, 0, Vector2(0.28878278, 0.74), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_45ppd"]
+curve = SubResource("Curve_5rv5f")
+
+[sub_resource type="Gradient" id="Gradient_l4st7"]
+colors = PackedColorArray(0.4640137, 0.51108634, 0.89238185, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_55vuu"]
+gradient = SubResource("Gradient_l4st7")
+
+[sub_resource type="Gradient" id="Gradient_3aqih"]
+offsets = PackedFloat32Array(0, 0.16290727, 0.6065163, 1)
+colors = PackedColorArray(0.9137255, 0, 0, 0.43529412, 0.7647059, 0.5647059, 0.5882353, 1, 0.69712406, 0.5455517, 0.2946141, 0.6041673, 1, 0.53333336, 1, 0.7137255)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a5mwf"]
+gradient = SubResource("Gradient_3aqih")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l4st7"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+inherit_velocity_ratio = 0.185
+direction = Vector3(1, 1, 0)
+spread = 180.0
+initial_velocity_min = 79.479996
+initial_velocity_max = 194.68
+gravity = Vector3(0, 98, 0)
+damping_max = 100.00001
+scale_min = 0.5
+scale_max = 1.1999999
+color = Color(0.7294118, 0.627451, 0.2901961, 0.7176471)
+color_ramp = SubResource("GradientTexture1D_a5mwf")
+color_initial_ramp = SubResource("GradientTexture1D_55vuu")
+alpha_curve = SubResource("CurveTexture_45ppd")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_45ppd"]
+streams_count = 5
+stream_0/stream = ExtResource("9_1bldx")
+stream_1/stream = ExtResource("10_2w2vq")
+stream_2/stream = ExtResource("11_eg5ho")
+stream_3/stream = ExtResource("12_56yfq")
+stream_4/stream = ExtResource("13_5rv5f")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5rv5f"]
+random_pitch = 1.2
+random_volume_offset_db = 1.59
+streams_count = 2
+stream_0/stream = ExtResource("14_eg5ho")
+stream_1/stream = ExtResource("15_56yfq")
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_1abrn")
+
+[node name="gamespace" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="gamespace"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Panel" type="Panel" parent="gamespace/MarginContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="gamespace/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="field" type="GridContainer" parent="gamespace/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 8
+
+[node name="ui" type="CanvasLayer" parent="."]
+script = ExtResource("3_6pddf")
+
+[node name="player_info_monologs" type="Control" parent="ui"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_sot6t")
+
+[node name="active_player_monolog" type="Control" parent="ui/player_info_monologs"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 44.0
+offset_right = 100.0
+offset_bottom = 84.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="ui/player_info_monologs/active_player_monolog"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(1, -1)
+metadata/_edit_use_anchors_ = true
+
+[node name="active_player_name_l" type="Label" parent="ui/player_info_monologs/active_player_monolog/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 34.0
+offset_right = 198.0
+offset_bottom = 60.0
+scale = Vector2(1, -1)
+theme_override_font_sizes/font_size = 20
+text = "WWWWWWWW's turn"
+horizontal_alignment = 1
+
+[node name="player1_monolog" type="Control" parent="ui/player_info_monologs"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 17.0
+offset_top = 44.0
+offset_right = 217.0
+offset_bottom = 84.0
+
+[node name="Panel" type="Panel" parent="ui/player_info_monologs/player1_monolog"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(1, -1)
+metadata/_edit_use_anchors_ = true
+
+[node name="player1_name_l" type="Label" parent="ui/player_info_monologs/player1_monolog/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 33.0
+offset_right = 198.0
+offset_bottom = 59.0
+scale = Vector2(1, -1)
+theme_override_font_sizes/font_size = 20
+text = "WWWWWWWW: 9999"
+horizontal_alignment = 1
+
+[node name="player2_monolog" type="Control" parent="ui/player_info_monologs"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -217.0
+offset_top = 44.0
+offset_right = -17.0
+offset_bottom = 84.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="ui/player_info_monologs/player2_monolog"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 40.0
+grow_horizontal = 2
+scale = Vector2(1, -1)
+metadata/_edit_use_anchors_ = true
+
+[node name="player2_name_l" type="Label" parent="ui/player_info_monologs/player2_monolog/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 33.0
+offset_right = 198.0
+offset_bottom = 59.0
+scale = Vector2(1, -1)
+theme_override_font_sizes/font_size = 20
+text = "WWWWWWWW: 2"
+horizontal_alignment = 1
+
+[node name="player3_monolog" type="Control" parent="ui/player_info_monologs"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -44.0
+offset_right = 219.0
+offset_bottom = -4.0
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="ui/player_info_monologs/player3_monolog"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 40.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="player3_name_l" type="Label" parent="ui/player_info_monologs/player3_monolog/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 198.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 20
+text = "WWWWWWWW: 2"
+horizontal_alignment = 1
+
+[node name="player4_monolog" type="Control" parent="ui/player_info_monologs"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -44.0
+offset_right = -18.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="ui/player_info_monologs/player4_monolog"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 40.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="player4_name_l" type="Label" parent="ui/player_info_monologs/player4_monolog/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 198.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 20
+text = "WWWWWWWW: 2"
+horizontal_alignment = 1
+
+[node name="wow" type="CPUParticles2D" parent="ui/player_info_monologs"]
+unique_name_in_owner = true
+position = Vector2(1806, 1055)
+emitting = false
+amount = 160
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.82
+randomness = 0.06
+emission_shape = 3
+emission_rect_extents = Vector2(120, 20)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 98.77
+initial_velocity_max = 168.72
+scale_amount_min = 2.0
+scale_amount_max = 6.0
+
+[node name="new_game_dialog" type="Control" parent="ui"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_p6iyq")
+
+[node name="PanelContainer" type="PanelContainer" parent="ui/new_game_dialog"]
+custom_minimum_size = Vector2(420, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 160.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/new_game_dialog/PanelContainer"]
+layout_mode = 2
+
+[node name="new_game_top_bar" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_top_bar"]
+layout_mode = 2
+text = "Choose the settings for your new game"
+
+[node name="Control" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_top_bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="close_new_dialog_b" type="Button" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_top_bar"]
+layout_mode = 2
+text = "X"
+
+[node name="new_game_main_content" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content"]
+custom_minimum_size = Vector2(455, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="game_settings" type="PanelContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer"]
+layout_mode = 2
+
+[node name="new_game_game_settings" type="VBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings"]
+layout_mode = 2
+
+[node name="deckdesigns_box" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings"]
+layout_mode = 2
+
+[node name="card_design_headertext" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/deckdesigns_box"]
+layout_mode = 2
+text = " Choose a deckdesign: "
+
+[node name="deck_design_l" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/deckdesigns_box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "anime1"
+
+[node name="Control2" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/deckdesigns_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="change_deck_design_b" type="Button" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/deckdesigns_box"]
+layout_mode = 2
+text = "Change"
+
+[node name="sets_in_game_box" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/sets_in_game_box"]
+layout_mode = 2
+text = " Sets in game:"
+
+[node name="sets_in_game_l" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/sets_in_game_box"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "8"
+
+[node name="warn1_img" type="TextureRect" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/sets_in_game_box"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("5_lgeyu")
+stretch_mode = 3
+
+[node name="Control" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/sets_in_game_box"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="sets_in_game_slider" type="HSlider" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/sets_in_game_box"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 2.0
+max_value = 14.0
+value = 8.0
+tick_count = 1
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer4"]
+layout_mode = 2
+text = " Cards in set:"
+
+[node name="cards_in_set_l" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2"
+
+[node name="warn2_img" type="TextureRect" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer4"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("5_lgeyu")
+stretch_mode = 3
+
+[node name="Control2" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="cards_in_set_slider" type="HSlider" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 2.0
+max_value = 4.0
+value = 2.0
+tick_count = 1
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer5"]
+layout_mode = 2
+text = " Peek time on start"
+
+[node name="peek_time_start_l" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3.5"
+
+[node name="Control3" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="peek_time_start_slider" type="HSlider" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer5"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 0.5
+max_value = 10.0
+step = 0.5
+value = 3.5
+tick_count = 1
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer6"]
+layout_mode = 2
+text = " Peek time on flip"
+
+[node name="peek_time_flip_l" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer6"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.5"
+
+[node name="Control4" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="peek_time_flip_slider" type="HSlider" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer6"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 0.5
+max_value = 10.0
+step = 0.5
+value = 1.5
+tick_count = 1
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings"]
+layout_mode = 2
+
+[node name="peek_on_start_checkbox" type="CheckBox" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = " Peek on start"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings"]
+layout_mode = 2
+
+[node name="retry_on_set_checkbox" type="CheckBox" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+button_pressed = true
+text = " Retry on set"
+
+[node name="playersettings" type="PanelContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "players"
+
+[node name="players_l" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2"
+
+[node name="Control3" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="players_slider" type="HSlider" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+min_value = 1.0
+max_value = 4.0
+value = 2.0
+
+[node name="players_fields" type="VBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer"]
+layout_mode = 2
+
+[node name="player_field_1" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_1"]
+layout_mode = 2
+text = " 1: "
+
+[node name="name1_in" type="LineEdit" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+placeholder_text = "player one"
+max_length = 18
+
+[node name="player_field_2" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_2"]
+layout_mode = 2
+text = " 2:"
+
+[node name="name2_in" type="LineEdit" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+placeholder_text = "player two"
+max_length = 18
+
+[node name="player_field_3" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_3"]
+layout_mode = 2
+text = " 3:"
+
+[node name="name3_in" type="LineEdit" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+placeholder_text = "player three"
+max_length = 18
+
+[node name="player_field_4" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_4"]
+layout_mode = 2
+text = " 4:"
+
+[node name="name4_in" type="LineEdit" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/players_fields/player_field_4"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+placeholder_text = "player four"
+max_length = 18
+
+[node name="new_game_bottom_bar" type="HBoxContainer" parent="ui/new_game_dialog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_bottom_bar"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="start_new_game_b" type="Button" parent="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_bottom_bar"]
+layout_mode = 2
+text = "Start game"
+
+[node name="options" type="Control" parent="ui"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="ui/options"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/options/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/options/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/options/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Options:"
+
+[node name="Control" type="Control" parent="ui/options/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="close_options_b" type="Button" parent="ui/options/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="popup_msg_monolog" type="Control" parent="ui"]
+visible = false
+z_index = 6
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_etnnn")
+
+[node name="PanelContainer" type="PanelContainer" parent="ui/popup_msg_monolog"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -110.0
+offset_right = 180.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="ui/popup_msg_monolog/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/popup_msg_monolog/PanelContainer"]
+layout_mode = 2
+
+[node name="popup_header_bar" type="HBoxContainer" parent="ui/popup_msg_monolog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="popup_header_l" type="Label" parent="ui/popup_msg_monolog/PanelContainer/VBoxContainer/popup_header_bar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = " This is my headertext"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="popup_close_b" type="Button" parent="ui/popup_msg_monolog/PanelContainer/VBoxContainer/popup_header_bar"]
+layout_mode = 2
+text = "X"
+
+[node name="PanelContainer" type="PanelContainer" parent="ui/popup_msg_monolog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="popup_main_l" type="Label" parent="ui/popup_msg_monolog/PanelContainer/VBoxContainer/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 120)
+layout_mode = 2
+size_flags_vertical = 1
+text = "This is an urgent message requierign your full atention there has never been a mor important message ever made by a msgbox like this since 1976 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh, tnx for your understanding"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="ui/popup_msg_monolog/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="popup_main_b" type="Button" parent="ui/popup_msg_monolog/PanelContainer/VBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 360.0
+offset_bottom = 25.0
+size_flags_vertical = 8
+text = "OK"
+
+[node name="winner_splashscreen" type="Control" parent="ui"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("8_7x1be")
+
+[node name="Panel" type="Panel" parent="ui/winner_splashscreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="ui/winner_splashscreen/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -423.0
+offset_right = 490.0
+offset_bottom = -273.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 120
+text = "Congratulations!!"
+
+[node name="winner_name_l" type="Label" parent="ui/winner_splashscreen/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 739.0
+offset_top = 322.0
+offset_right = 1192.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 69
+text = "WWWWWWWW"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ui/winner_splashscreen/Panel"]
+layout_mode = 0
+offset_left = 646.0
+offset_top = 435.0
+offset_right = 1265.0
+offset_bottom = 521.0
+theme_override_font_sizes/font_size = 69
+text = "You are the winner!"
+
+[node name="Panel" type="Panel" parent="ui/winner_splashscreen/Panel"]
+custom_minimum_size = Vector2(360, 240)
+layout_mode = 0
+offset_left = 785.0
+offset_top = 607.0
+offset_right = 1145.0
+offset_bottom = 847.0
+mouse_filter = 2
+
+[node name="all_scores_l" type="Label" parent="ui/winner_splashscreen/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 968.0
+offset_top = 629.0
+offset_right = 1135.0
+offset_bottom = 846.0
+theme_override_font_sizes/font_size = 28
+text = "99 sets
+74 sets
+12 sets
+0 sets
+"
+horizontal_alignment = 2
+
+[node name="all_names_l" type="Label" parent="ui/winner_splashscreen/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 798.0
+offset_top = 629.0
+offset_right = 1034.0
+offset_bottom = 846.0
+theme_override_font_sizes/font_size = 28
+text = "WWWWWWWWW
+runner up
+Keegan
+Berit
+"
+
+[node name="Label2" type="Label" parent="ui/winner_splashscreen/Panel"]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 856.0
+offset_right = 1073.0
+offset_bottom = 882.0
+theme_override_font_sizes/font_size = 20
+text = "Press esc to go to menu"
+
+[node name="rocket_effect" type="GPUParticles2D" parent="ui/winner_splashscreen"]
+material = SubResource("CanvasItemMaterial_1bldx")
+position = Vector2(971, 608)
+sub_emitter = NodePath("boom_effect")
+texture = SubResource("GradientTexture2D_eg5ho")
+trail_enabled = true
+trail_lifetime = 0.12
+trail_sections = 6
+trail_section_subdivisions = 2
+process_material = SubResource("ParticleProcessMaterial_45ppd")
+
+[node name="boom_effect" type="GPUParticles2D" parent="ui/winner_splashscreen/rocket_effect"]
+position = Vector2(32, -371)
+amount = 100
+texture = SubResource("GradientTexture2D_56yfq")
+randomness = 0.85
+collision_base_size = 0.0
+trail_enabled = true
+trail_lifetime = 0.15000000000000002
+trail_sections = 5
+process_material = SubResource("ParticleProcessMaterial_l4st7")
+
+[node name="main_menu" type="Control" parent="ui"]
+unique_name_in_owner = true
+visible = false
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-1, -4)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="ui/main_menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -89.5
+offset_right = 72.5
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="ui/main_menu/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_lgeyu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/main_menu/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Label" type="Label" parent="ui/main_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Main Menu"
+horizontal_alignment = 1
+
+[node name="start_new_game_dialog_b" type="Button" parent="ui/main_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "start new game"
+
+[node name="start_options_b" type="Button" parent="ui/main_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "options"
+
+[node name="make_a_deck_b" type="Button" parent="ui/main_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "make a deck"
+
+[node name="quit_game_b" type="Button" parent="ui/main_menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "quit game"
+
+[node name="deck_maker" type="Control" parent="ui"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_45ppd")
+
+[node name="PanelContainer" type="PanelContainer" parent="ui/deck_maker"]
+custom_minimum_size = Vector2(600, 800)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="deck_maker_main" type="VBoxContainer" parent="ui/deck_maker/PanelContainer"]
+layout_mode = 2
+
+[node name="deck_maker_top_header" type="HBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_top_header"]
+layout_mode = 2
+text = "Deck manager"
+
+[node name="Control" type="Control" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_top_header"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="deck_close_b" type="Button" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_top_header"]
+layout_mode = 2
+text = "X"
+
+[node name="deck_maker_main_body" type="HBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="create" type="VBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/create"]
+layout_mode = 2
+text = "1. Create or edit a DeckDesign"
+
+[node name="deck_load_b" type="Button" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/create"]
+layout_mode = 2
+text = "Load "
+
+[node name="deck_create_b" type="Button" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/create"]
+layout_mode = 2
+text = "Create new"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body"]
+layout_mode = 2
+
+[node name="populate" type="VBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/populate"]
+layout_mode = 2
+text = "2. Upload images"
+
+[node name="deck_upload_bacckside_b" type="Button" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/populate"]
+layout_mode = 2
+text = "Backside"
+
+[node name="backside_container" type="Control" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/populate"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="deck_upload_frontside_b" type="Button" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/populate"]
+layout_mode = 2
+text = "Frontsides"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/populate"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/populate/HBoxContainer"]
+layout_mode = 2
+text = "frontsides:"
+
+[node name="deck_populate_frontsides_l" type="Label" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/populate/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "9999"
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body"]
+layout_mode = 2
+
+[node name="arrange" type="VBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/arrange"]
+layout_mode = 2
+text = "3.Arrange frontsides"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/arrange"]
+custom_minimum_size = Vector2(20, 600)
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="frontsides_container" type="GridContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/arrange/ScrollContainer"]
+unique_name_in_owner = true
+clip_contents = true
+custom_minimum_size = Vector2(200, 600)
+layout_mode = 2
+
+[node name="deck_maker_bottom" type="HBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_bottom"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_bottom/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_bottom/Control/VBoxContainer"]
+layout_mode = 2
+text = "4. Give an unique name"
+
+[node name="deck_name_in" type="LineEdit" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_bottom/Control/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "name"
+
+[node name="deck_save_b" type="Button" parent="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_bottom"]
+layout_mode = 2
+text = "5. Save Deck"
+
+[node name="background_music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_45ppd")
+bus = &"music"
+playback_type = 1
+
+[node name="matching_set_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_5rv5f")
+pitch_scale = 0.9
+bus = &"sfx"
+
+[connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
+[connection signal="pressed" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_top_bar/close_new_dialog_b" to="ui" method="_on_close_new_dialog_b_pressed"]
+[connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/sets_in_game_box/sets_in_game_slider" to="ui/new_game_dialog" method="_on_h_slider_drag_ended"]
+[connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer4/cards_in_set_slider" to="ui/new_game_dialog" method="_on_cards_in_set_slider_drag_ended"]
+[connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer5/peek_time_start_slider" to="ui/new_game_dialog" method="_on_peek_time_start_slider_drag_ended"]
+[connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer6/peek_time_flip_slider" to="ui/new_game_dialog" method="_on_peek_time_flip_slider_drag_ended"]
+[connection signal="pressed" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer/peek_on_start_checkbox" to="ui/new_game_dialog" method="_on_peek_on_start_checkbox_pressed"]
+[connection signal="pressed" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer2/retry_on_set_checkbox" to="ui/new_game_dialog" method="_on_retry_on_set_checkbox_pressed"]
+[connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/HBoxContainer/players_slider" to="ui/new_game_dialog" method="_on_players_slider_drag_ended"]
+[connection signal="pressed" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_bottom_bar/start_new_game_b" to="ui/new_game_dialog" method="_on_start_new_game_b_pressed"]
+[connection signal="pressed" from="ui/options/PanelContainer/VBoxContainer/HBoxContainer/close_options_b" to="ui" method="_on_close_options_b_pressed"]
+[connection signal="pressed" from="ui/popup_msg_monolog/PanelContainer/VBoxContainer/popup_header_bar/popup_close_b" to="ui/popup_msg_monolog" method="_on_popup_close_b_pressed"]
+[connection signal="pressed" from="ui/popup_msg_monolog/PanelContainer/VBoxContainer/Control/popup_main_b" to="ui/popup_msg_monolog" method="_on_popup_close_b_pressed"]
+[connection signal="pressed" from="ui/main_menu/MarginContainer/VBoxContainer/start_new_game_dialog_b" to="ui" method="_on_start_new_game_dialog_b_pressed"]
+[connection signal="pressed" from="ui/main_menu/MarginContainer/VBoxContainer/start_options_b" to="ui" method="_on_start_options_b_pressed"]
+[connection signal="pressed" from="ui/main_menu/MarginContainer/VBoxContainer/make_a_deck_b" to="ui" method="_on_make_a_deck_b_pressed"]
+[connection signal="pressed" from="ui/main_menu/MarginContainer/VBoxContainer/quit_game_b" to="ui" method="_on_quit_game_b_pressed"]
+[connection signal="pressed" from="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_top_header/deck_close_b" to="ui" method="_on_deck_close_b_pressed"]
+[connection signal="pressed" from="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/create/deck_load_b" to="ui/deck_maker" method="_on_deck_load_b_pressed"]

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Deck" load_steps=22 format=3 uid="uid://bnr4fr7isgaic"]
+
+[ext_resource type="Texture2D" uid="uid://312i5sbkqa4v" path="res://resources/art/anime1/anime (0).png" id="1_cwqne"]
+[ext_resource type="Script" uid="uid://c21jdsp62nubb" path="res://resources/deck_design.gd" id="1_wb62k"]
+[ext_resource type="Texture2D" uid="uid://bogg7ftsnpr4t" path="res://resources/art/anime1/anime (1).png" id="2_5swo2"]
+[ext_resource type="Texture2D" uid="uid://ksbogpbunm1c" path="res://resources/art/anime1/anime (2).png" id="3_8q32m"]
+[ext_resource type="Texture2D" uid="uid://c8xjlnslm55ci" path="res://resources/art/anime1/anime (3).png" id="4_be0jl"]
+[ext_resource type="Texture2D" uid="uid://5yblvapysyjm" path="res://resources/art/anime1/anime (4).png" id="5_p2vsj"]
+[ext_resource type="Texture2D" uid="uid://cq2mc0phcua6b" path="res://resources/art/anime1/anime (5).png" id="6_qv75i"]
+[ext_resource type="Texture2D" uid="uid://c5sa8li2vk8pb" path="res://resources/art/anime1/anime (6).png" id="7_xoxxy"]
+[ext_resource type="Texture2D" uid="uid://16fcgh64merd" path="res://resources/art/anime1/anime (7).png" id="8_aa0v4"]
+[ext_resource type="Texture2D" uid="uid://c4v4i8cg0lmpc" path="res://resources/art/anime1/anime (8).png" id="9_rvlxp"]
+[ext_resource type="Texture2D" uid="uid://bnuiwvdmnppqd" path="res://resources/art/anime1/anime (9).png" id="10_jvjta"]
+[ext_resource type="Texture2D" uid="uid://b36tyspm4m4i" path="res://resources/art/anime1/anime (10).png" id="11_wam0j"]
+[ext_resource type="Texture2D" uid="uid://damrbx2qnb2xv" path="res://resources/art/anime1/anime (11).png" id="12_5dh4q"]
+[ext_resource type="Texture2D" uid="uid://d6h7g1l7kmfd" path="res://resources/art/anime1/anime (12).png" id="13_i6ko6"]
+[ext_resource type="Texture2D" uid="uid://da5gysuf1wiat" path="res://resources/art/anime1/anime (13).png" id="14_1wmpp"]
+[ext_resource type="Texture2D" uid="uid://35hh5om03ikq" path="res://resources/art/anime1/anime (14).png" id="15_kpdi8"]
+[ext_resource type="Texture2D" uid="uid://dfm5ev0xnrl2w" path="res://resources/art/anime1/anime (15).png" id="16_gb1w8"]
+[ext_resource type="Texture2D" uid="uid://bcdccmpco7dw7" path="res://resources/art/anime1/anime (16).png" id="17_jbwr4"]
+[ext_resource type="Texture2D" uid="uid://bgky3mblsjeq5" path="res://resources/art/anime1/anime (17).png" id="18_rml5n"]
+[ext_resource type="Texture2D" uid="uid://bndkvmuqwygxp" path="res://resources/art/anime1/anime (18).png" id="19_5d3kx"]
+[ext_resource type="Texture2D" uid="uid://cq18iapymuv7r" path="res://resources/art/anime1/anime (19).png" id="20_nbt1g"]
+
+[resource]
+script = ExtResource("1_wb62k")
+deck_name = "anime1"
+img = Array[Texture2D]([ExtResource("1_cwqne"), ExtResource("2_5swo2"), ExtResource("3_8q32m"), ExtResource("4_be0jl"), ExtResource("5_p2vsj"), ExtResource("6_qv75i"), ExtResource("7_xoxxy"), ExtResource("8_aa0v4"), ExtResource("9_rvlxp"), ExtResource("10_jvjta"), ExtResource("11_wam0j"), ExtResource("12_5dh4q"), ExtResource("13_i6ko6"), ExtResource("14_1wmpp"), ExtResource("15_kpdi8"), ExtResource("16_gb1w8"), ExtResource("17_jbwr4"), ExtResource("18_rml5n"), ExtResource("19_5d3kx"), ExtResource("20_nbt1g")])
+metadata/_custom_type_script = "uid://c21jdsp62nubb"

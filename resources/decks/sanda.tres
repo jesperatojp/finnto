@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="DeckDesign" load_steps=29 format=3 uid="uid://bsgw3j7gg7lny"]
+
+[ext_resource type="Script" uid="uid://c21jdsp62nubb" path="res://resources/deck_design.gd" id="1_atirb"]
+[ext_resource type="Texture2D" uid="uid://dsqkna0uedvkd" path="res://resources/art/beste/baksiden1.png" id="1_k35cc"]
+[ext_resource type="Texture2D" uid="uid://jh7sqmq7voq1" path="res://resources/art/beste/NetaYume_Lumina_3.5_00023_.png" id="2_aifx2"]
+[ext_resource type="Texture2D" uid="uid://c2fe1ibwfxtsf" path="res://resources/art/beste/NetaYume_Lumina_3.5_00028_.png" id="3_k4qsd"]
+[ext_resource type="Texture2D" uid="uid://bw1ixy2ght3x" path="res://resources/art/beste/NetaYume_Lumina_3.5_00024_.png" id="4_o3fey"]
+[ext_resource type="Texture2D" uid="uid://c0w2la1wrx20" path="res://resources/art/beste/NetaYume_Lumina_3.5_00089_.png" id="5_iqcvj"]
+[ext_resource type="Texture2D" uid="uid://yk65lmls0dso" path="res://resources/art/beste/NetaYume_Lumina_3.5_00108_.png" id="6_i26wd"]
+[ext_resource type="Texture2D" uid="uid://b7gb0fwsdp2c4" path="res://resources/art/beste/NetaYume_Lumina_3.5_00148_.png" id="7_qjn6y"]
+[ext_resource type="Texture2D" uid="uid://bg5w52vnpv856" path="res://resources/art/beste/NetaYume_Lumina_3.5_00065_.png" id="8_cfes6"]
+[ext_resource type="Texture2D" uid="uid://dkboa17dxwky1" path="res://resources/art/beste/NetaYume_Lumina_3.5_00046_.png" id="9_1f8ax"]
+[ext_resource type="Texture2D" uid="uid://churm66nbl87s" path="res://resources/art/beste/NetaYume_Lumina_3.5_00090_.png" id="10_bwyiy"]
+[ext_resource type="Texture2D" uid="uid://c4mm5cfvp5bny" path="res://resources/art/beste/NetaYume_Lumina_3.5_00032_.png" id="11_oilcl"]
+[ext_resource type="Texture2D" uid="uid://c7rbqkpx8jfah" path="res://resources/art/beste/NetaYume_Lumina_3.5_00038_.png" id="12_u77eb"]
+[ext_resource type="Texture2D" uid="uid://ouu15r8xcxqm" path="res://resources/art/beste/NetaYume_Lumina_3.5_00151_.png" id="13_asd1r"]
+[ext_resource type="Texture2D" uid="uid://dpdbwc84g70m6" path="res://resources/art/beste/NetaYume_Lumina_3.5_00081_.png" id="14_81gwi"]
+[ext_resource type="Texture2D" uid="uid://chrk0ughi0w7j" path="res://resources/art/beste/NetaYume_Lumina_3.5_00157_.png" id="15_oga6n"]
+[ext_resource type="Texture2D" uid="uid://5mmk8ent56q8" path="res://resources/art/beste/NetaYume_Lumina_3.5_00074_.png" id="16_0h20i"]
+[ext_resource type="Texture2D" uid="uid://dp3hvkc5cffkh" path="res://resources/art/beste/NetaYume_Lumina_3.5_00060_.png" id="17_orfu4"]
+[ext_resource type="Texture2D" uid="uid://dnqioru865gth" path="res://resources/art/beste/NetaYume_Lumina_3.5_00102_.png" id="18_sefl0"]
+[ext_resource type="Texture2D" uid="uid://e7quhn6ll5qn" path="res://resources/art/beste/NetaYume_Lumina_3.5_00045_.png" id="19_lcvpi"]
+[ext_resource type="Texture2D" uid="uid://ph3cvfkom8nm" path="res://resources/art/beste/NetaYume_Lumina_3.5_00098_.png" id="20_23xtt"]
+[ext_resource type="Texture2D" uid="uid://cg2i3qyi6a330" path="res://resources/art/beste/NetaYume_Lumina_3.5_00035_.png" id="21_c06ye"]
+[ext_resource type="Texture2D" uid="uid://dtr7iloxcs277" path="res://resources/art/beste/NetaYume_Lumina_3.5_00041_.png" id="22_lo7ts"]
+[ext_resource type="Texture2D" uid="uid://d1qibe60vrsv6" path="res://resources/art/beste/NetaYume_Lumina_3.5_00078_.png" id="23_mva1s"]
+[ext_resource type="Texture2D" uid="uid://qsyonbveyxp4" path="res://resources/art/beste/NetaYume_Lumina_3.5_00105_.png" id="24_2amgk"]
+[ext_resource type="Texture2D" uid="uid://bnq8akokuch3x" path="res://resources/art/beste/NetaYume_Lumina_3.5_00027_.png" id="25_xyk7h"]
+[ext_resource type="Texture2D" uid="uid://bj7w8f47ve5f8" path="res://resources/art/beste/NetaYume_Lumina_3.5_00145_.png" id="26_8skmu"]
+[ext_resource type="Texture2D" uid="uid://jpibru80pu76" path="res://resources/art/beste/NetaYume_Lumina_3.5_00132_.png" id="27_ob5h1"]
+
+[resource]
+script = ExtResource("1_atirb")
+deck_name = "sanda"
+img = Array[Texture2D]([ExtResource("1_k35cc"), ExtResource("2_aifx2"), ExtResource("3_k4qsd"), ExtResource("4_o3fey"), ExtResource("5_iqcvj"), ExtResource("6_i26wd"), ExtResource("7_qjn6y"), ExtResource("8_cfes6"), ExtResource("9_1f8ax"), ExtResource("10_bwyiy"), ExtResource("11_oilcl"), ExtResource("12_u77eb"), ExtResource("13_asd1r"), ExtResource("14_81gwi"), ExtResource("15_oga6n"), ExtResource("16_0h20i"), ExtResource("17_orfu4"), ExtResource("18_sefl0"), ExtResource("19_lcvpi"), ExtResource("20_23xtt"), ExtResource("21_c06ye"), ExtResource("22_lo7ts"), ExtResource("23_mva1s"), ExtResource("24_2amgk"), ExtResource("25_xyk7h"), ExtResource("26_8skmu"), ExtResource("27_ob5h1"), null])
+metadata/_custom_type_script = "uid://c21jdsp62nubb"
