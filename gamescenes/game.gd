@@ -4,8 +4,6 @@ const CARD_SLOT = preload("uid://bojnaxjajdt4t")
 func _ready() -> void:
 	GM.start_new_game.connect(set_up_slots)
 	GM.check_correct.connect(check_set)
-	#UIM.msg_ok.connect(make_cards_hidden_quickly)
-	#%background_music.play()
 	
 func set_up_slots():
 	var cards:Array[Card]= GM.the_deck

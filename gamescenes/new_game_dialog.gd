@@ -1,6 +1,7 @@
 extends Control
 const ANIME_1 = preload("uid://bnr4fr7isgaic")
 const SANDA = preload("uid://bsgw3j7gg7lny")
+const NICE = preload("uid://cmd8sn5ku8ak0")
 
 
 var my_sets_in_deck:int = 8
@@ -12,7 +13,7 @@ var my_peek_time_start:float = 2.5
 var my_peek_time_flip:float = 2.5
 var my_peek_on_start: bool= true
 var my_retry_on_set: bool= false
-var all_deckdesigns: Array[DeckDesign]= [ANIME_1, SANDA]
+var all_deckdesigns: Array[DeckDesign]= [ANIME_1, SANDA,NICE]
 var deckdesign_inx:int=0
 var deckdesign_last_inx:int=1 #this will be dynamicly set on _ready
 func _ready():

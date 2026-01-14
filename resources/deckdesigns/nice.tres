@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DeckDesign" load_steps=24 format=3 uid="uid://cmd8sn5ku8ak0"]
+
+[ext_resource type="Texture2D" uid="uid://bv8vv83appci6" path="res://resources/art/nice/backside.png" id="1_75di7"]
+[ext_resource type="Script" uid="uid://c21jdsp62nubb" path="res://resources/deck_design.gd" id="1_xfsfc"]
+[ext_resource type="Texture2D" uid="uid://yorcpuy4bnsv" path="res://resources/art/nice/household_00215_.png" id="2_ym66q"]
+[ext_resource type="Texture2D" uid="uid://c1pdfejlopyuh" path="res://resources/art/nice/household_00188_.png" id="3_u8qp8"]
+[ext_resource type="Texture2D" uid="uid://dgixhw57vumfo" path="res://resources/art/nice/household_00177_.png" id="4_ipgkv"]
+[ext_resource type="Texture2D" uid="uid://dak51txnvi8os" path="res://resources/art/nice/household_00165_.png" id="5_l6q2d"]
+[ext_resource type="Texture2D" uid="uid://drw08qb7oxtfg" path="res://resources/art/nice/household_00145_.png" id="6_rhnh4"]
+[ext_resource type="Texture2D" uid="uid://baxxx81l3pfx" path="res://resources/art/nice/household_00129_.png" id="7_6cegs"]
+[ext_resource type="Texture2D" uid="uid://cnqdraotqngkv" path="res://resources/art/nice/household_00119_.png" id="8_c2uxy"]
+[ext_resource type="Texture2D" uid="uid://bbwiqhibcv506" path="res://resources/art/nice/household_00111_.png" id="9_lgl6d"]
+[ext_resource type="Texture2D" uid="uid://cy3248t7yurnn" path="res://resources/art/nice/household_00103_.png" id="10_1q67b"]
+[ext_resource type="Texture2D" uid="uid://h4vsqund6i8" path="res://resources/art/nice/household_00098_.png" id="11_lo2pe"]
+[ext_resource type="Texture2D" uid="uid://pa6qxglmbj4x" path="res://resources/art/nice/household_00094_.png" id="12_ln1ev"]
+[ext_resource type="Texture2D" uid="uid://bbbbbukoj1l73" path="res://resources/art/nice/household_00084_.png" id="13_j3kjd"]
+[ext_resource type="Texture2D" uid="uid://dxjsjpthrje36" path="res://resources/art/nice/household_00077_.png" id="14_a4c1r"]
+[ext_resource type="Texture2D" uid="uid://bb0ioglc7xrjt" path="res://resources/art/nice/household_00072_.png" id="15_6bmgb"]
+[ext_resource type="Texture2D" uid="uid://c4xp4vxnxa6up" path="res://resources/art/nice/household_00055_.png" id="16_moao1"]
+[ext_resource type="Texture2D" uid="uid://pxepy3n7agax" path="res://resources/art/nice/household_00037_.png" id="17_1ue2w"]
+[ext_resource type="Texture2D" uid="uid://3wvdjna6dpch" path="res://resources/art/nice/household_00027_.png" id="18_irrds"]
+[ext_resource type="Texture2D" uid="uid://bdrmiqv4spkr8" path="res://resources/art/nice/household_00023_.png" id="19_cplwq"]
+[ext_resource type="Texture2D" uid="uid://ocwl5d4k3w6r" path="res://resources/art/nice/household_00011_.png" id="20_p8biy"]
+[ext_resource type="Texture2D" uid="uid://2sc5ieonacqi" path="res://resources/art/nice/household_00005_.png" id="21_v13wf"]
+[ext_resource type="Texture2D" uid="uid://bbloorpd67crq" path="res://resources/art/nice/household_00002_.png" id="22_f2gey"]
+
+[resource]
+script = ExtResource("1_xfsfc")
+deck_name = "nice"
+img = Array[Texture2D]([ExtResource("1_75di7"), ExtResource("2_ym66q"), ExtResource("3_u8qp8"), ExtResource("4_ipgkv"), ExtResource("5_l6q2d"), ExtResource("6_rhnh4"), ExtResource("7_6cegs"), ExtResource("8_c2uxy"), ExtResource("9_lgl6d"), ExtResource("10_1q67b"), ExtResource("11_lo2pe"), ExtResource("12_ln1ev"), ExtResource("13_j3kjd"), ExtResource("14_a4c1r"), ExtResource("15_6bmgb"), ExtResource("16_moao1"), ExtResource("17_1ue2w"), ExtResource("18_irrds"), ExtResource("19_cplwq"), ExtResource("20_p8biy"), ExtResource("21_v13wf"), ExtResource("22_f2gey")])
+metadata/_custom_type_script = "uid://c21jdsp62nubb"

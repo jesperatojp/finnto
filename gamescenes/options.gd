@@ -1,7 +1,9 @@
 extends Control
 
-
-
+func _ready() -> void:
+	%options_music_slider.value = Settings.volume_music
+	%options_effects_slider.value = Settings.volume_effects
+	UIM.change_volume()
 func _on_options_music_slider_drag_ended(value_changed: bool) -> void:
 	if value_changed== false: return
 	Settings.volume_music = %options_music_slider.value
