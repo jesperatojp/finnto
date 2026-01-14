@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://i1kkhc05eujw"]
+[gd_scene load_steps=35 format=3 uid="uid://i1kkhc05eujw"]
 
 [ext_resource type="Script" uid="uid://brc638qj31yfn" path="res://gamescenes/game.gd" id="1_1abrn"]
 [ext_resource type="Script" uid="uid://bws4y0yiyyfu6" path="res://gamescenes/ui.gd" id="3_6pddf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bw62c4ovasnn7" path="res://gamescenes/new_game_dialog.gd" id="3_p6iyq"]
 [ext_resource type="Script" uid="uid://cb8ikscvgd2l8" path="res://gamescenes/player_info_monologs.gd" id="3_sot6t"]
 [ext_resource type="Texture2D" uid="uid://c78hsv47y6bu0" path="res://resources/art/ui/icons/varsel trekant.png" id="5_lgeyu"]
+[ext_resource type="Script" uid="uid://c1qbutphwe4xa" path="res://gamescenes/options.gd" id="6_5rv5f"]
 [ext_resource type="Script" uid="uid://dvju4r15ta1kx" path="res://gamescenes/popup_msg_monolog.gd" id="7_etnnn"]
 [ext_resource type="Script" uid="uid://dd8jdqh60r7nt" path="res://gamescenes/winner_splashscreen.gd" id="8_7x1be"]
 [ext_resource type="AudioStream" uid="uid://gflqk0xwke6t" path="res://resources/sound/music/Sketchbook 2024-07-04.ogg" id="9_1bldx"]
@@ -669,7 +670,6 @@ text = "Start game"
 
 [node name="options" type="Control" parent="ui"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -678,6 +678,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("6_5rv5f")
 
 [node name="PanelContainer" type="PanelContainer" parent="ui/options"]
 custom_minimum_size = Vector2(400, 300)
@@ -702,7 +703,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="ui/options/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Options:"
+text = " Options:"
 
 [node name="Control" type="Control" parent="ui/options/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -711,6 +712,54 @@ size_flags_horizontal = 3
 [node name="close_options_b" type="Button" parent="ui/options/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "X"
+
+[node name="MarginContainer" type="MarginContainer" parent="ui/options/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="options_music" type="HBoxContainer" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_music"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="Control" type="Control" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_music"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="options_music_slider" type="HSlider" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_music"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.02
+value = 0.8
+
+[node name="options_effects" type="HBoxContainer" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_effects"]
+layout_mode = 2
+text = "Effects volume"
+
+[node name="Control" type="Control" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_effects"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="options_effects_slider" type="HSlider" parent="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_effects"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.02
+value = 0.6
 
 [node name="popup_msg_monolog" type="Control" parent="ui"]
 visible = false
@@ -965,6 +1014,7 @@ size_flags_vertical = 6
 text = "options"
 
 [node name="make_a_deck_b" type="Button" parent="ui/main_menu/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "make a deck"
 
@@ -974,6 +1024,7 @@ text = "quit game"
 
 [node name="deck_maker" type="Control" parent="ui"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1122,6 +1173,7 @@ text = "5. Save Deck"
 [node name="background_music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_45ppd")
+autoplay = true
 bus = &"music"
 playback_type = 1
 
@@ -1133,6 +1185,7 @@ bus = &"sfx"
 
 [connection signal="item_rect_changed" from="." to="." method="_on_item_rect_changed"]
 [connection signal="pressed" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_top_bar/close_new_dialog_b" to="ui" method="_on_close_new_dialog_b_pressed"]
+[connection signal="pressed" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/deckdesigns_box/change_deck_design_b" to="ui/new_game_dialog" method="_on_change_deck_design_b_pressed"]
 [connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/sets_in_game_box/sets_in_game_slider" to="ui/new_game_dialog" method="_on_h_slider_drag_ended"]
 [connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer4/cards_in_set_slider" to="ui/new_game_dialog" method="_on_cards_in_set_slider_drag_ended"]
 [connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/game_settings/new_game_game_settings/HBoxContainer5/peek_time_start_slider" to="ui/new_game_dialog" method="_on_peek_time_start_slider_drag_ended"]
@@ -1142,6 +1195,8 @@ bus = &"sfx"
 [connection signal="drag_ended" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_main_content/VBoxContainer/playersettings/VBoxContainer/HBoxContainer/players_slider" to="ui/new_game_dialog" method="_on_players_slider_drag_ended"]
 [connection signal="pressed" from="ui/new_game_dialog/PanelContainer/VBoxContainer/new_game_bottom_bar/start_new_game_b" to="ui/new_game_dialog" method="_on_start_new_game_b_pressed"]
 [connection signal="pressed" from="ui/options/PanelContainer/VBoxContainer/HBoxContainer/close_options_b" to="ui" method="_on_close_options_b_pressed"]
+[connection signal="drag_ended" from="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_music/options_music_slider" to="ui/options" method="_on_options_music_slider_drag_ended"]
+[connection signal="drag_ended" from="ui/options/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/options_effects/options_effects_slider" to="ui/options" method="_on_options_effects_slider_drag_ended"]
 [connection signal="pressed" from="ui/popup_msg_monolog/PanelContainer/VBoxContainer/popup_header_bar/popup_close_b" to="ui/popup_msg_monolog" method="_on_popup_close_b_pressed"]
 [connection signal="pressed" from="ui/popup_msg_monolog/PanelContainer/VBoxContainer/Control/popup_main_b" to="ui/popup_msg_monolog" method="_on_popup_close_b_pressed"]
 [connection signal="pressed" from="ui/main_menu/MarginContainer/VBoxContainer/start_new_game_dialog_b" to="ui" method="_on_start_new_game_dialog_b_pressed"]
@@ -1150,3 +1205,4 @@ bus = &"sfx"
 [connection signal="pressed" from="ui/main_menu/MarginContainer/VBoxContainer/quit_game_b" to="ui" method="_on_quit_game_b_pressed"]
 [connection signal="pressed" from="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_top_header/deck_close_b" to="ui" method="_on_deck_close_b_pressed"]
 [connection signal="pressed" from="ui/deck_maker/PanelContainer/deck_maker_main/deck_maker_main_body/create/deck_load_b" to="ui/deck_maker" method="_on_deck_load_b_pressed"]
+[connection signal="finished" from="background_music" to="." method="_on_background_music_finished"]

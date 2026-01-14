@@ -18,6 +18,10 @@ var deck_to: int
 func _ready():
 	GM.start_new_turn.connect(reset_turndata)
 func emit_msg_ok():msg_ok.emit()
+func change_volume():
+	await get_tree().create_timer(0.001).timeout
+	AudioServer.set_bus_volume_db(1,linear_to_db(Settings.volume_effects))
+	AudioServer.set_bus_volume_db(2,linear_to_db(Settings.volume_music))
 func image_slot_moved(client: ImageSlot):
 	deck_from=client.last_list_id
 	deck_to = client.list_id

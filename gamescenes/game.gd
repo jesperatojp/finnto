@@ -63,3 +63,13 @@ func make_window_min_size() -> void:
 	print("size signal works ")
 	var window_size = DisplayServer.window_get_size()
 	if window_size < Settings.MIN_SCREEN_SIZE: get_window().size = Settings.MIN_SCREEN_SIZE
+
+
+func _on_item_rect_changed() -> void:
+	print("size signal works here")
+	make_window_min_size()
+
+
+func _on_background_music_finished() -> void:
+	await get_tree().create_timer(0.5).timeout
+	%background_music.play()

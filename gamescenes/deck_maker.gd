@@ -2,7 +2,8 @@ extends Control
 @onready var backside: Control = %backside_container
 @onready var slot_list: GridContainer = %frontsides_container
 var slots_in_list=0
-
+var working:Array[Card]
+var deckfolder: String = "res://resources/decks/"
 var test_img:Array[Texture2D]= [preload("uid://d1qibe60vrsv6"),preload("uid://dp3hvkc5cffkh"),preload("uid://qsyonbveyxp4"),preload("uid://ouu15r8xcxqm"),preload("uid://chrk0ughi0w7j")]
 const IMAGE_SLOT = preload("uid://drdqb4fmgsgsm")
 

@@ -71,6 +71,7 @@ func new_round():
 func new_turn():
 	if cards_found >= Settings.tot_slots:#all cards are found, so the game ends
 		emit_do(DO.END) 
+		print("all cards found, going to win screen")
 		return
 	if go_again ==true:
 		UIM.reset_turndata()

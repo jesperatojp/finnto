@@ -1,6 +1,10 @@
 extends Control
+const ANIME_1 = preload("uid://bnr4fr7isgaic")
+const SANDA = preload("uid://bsgw3j7gg7lny")
+
+
 var my_sets_in_deck:int = 8
-var my_deck_design: DeckDesign =preload("uid://bsgw3j7gg7lny") #TODO this is missing the functionality to add others from file
+var my_deck_design: DeckDesign = ANIME_1
 var my_cards_in_set: int =2
 var my_players: int=2
 var my_player_names : Array[String] = ["the one", "mr two","dave", "adder"]
@@ -8,9 +12,11 @@ var my_peek_time_start:float = 2.5
 var my_peek_time_flip:float = 2.5
 var my_peek_on_start: bool= true
 var my_retry_on_set: bool= false
-
+var all_deckdesigns: Array[DeckDesign]= [ANIME_1, SANDA]
+var deckdesign_inx:int=0
+var deckdesign_last_inx:int=1 #this will be dynamicly set on _ready
 func _ready():
-	
+	deckdesign_last_inx = all_deckdesigns.size()-1
 	import_consts_from_settings()
 func import_consts_from_settings():
 	%sets_in_game_slider.max_value = Settings.MAX_SET_IN_DECK
@@ -93,3 +99,10 @@ func _on_players_slider_drag_ended(value_changed: bool) -> void:
 		my_players = int(%players_slider.value)
 		show_hide_players()
 		update_my_visuals()
+
+
+func _on_change_deck_design_b_pressed() -> void:
+	deckdesign_inx +=1
+	if deckdesign_inx > deckdesign_last_inx: deckdesign_inx =0
+	my_deck_design = all_deckdesigns[deckdesign_inx]
+	%deck_design_l.text = my_deck_design.deck_name

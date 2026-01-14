@@ -37,7 +37,8 @@ func solve_card():
 	if state == IM.SHOWING: 
 		state = IM.SOLVED
 		GM.state = GM.NOW.PLAYER
-		#GM.go_again= Settings.retry_on_set
+		print("card solved")
+		GM.go_again= Settings.retry_on_set
 func _do_hide(): #internal only, you use hide_card()!!!!!!!!!
 	state= IM.HIDDEN
 	%flopp.play()

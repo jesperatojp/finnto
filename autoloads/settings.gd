@@ -16,3 +16,5 @@ var peek_time_flip:float = 9.5
 var peek_on_start:bool = true
 var player_names: Array[String] 
 var retry_on_set:bool = false
+var volume_effects: float = 0.6
+var volume_music: float =0.8
